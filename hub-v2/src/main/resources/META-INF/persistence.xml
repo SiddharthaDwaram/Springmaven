@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="hub"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<!-- Entities -->
+		<class>com.acme.s4ext.jpa.model.EMPLOYEE</class>
+		<class>com.acme.s4ext.jpa.model.EmpPastExp</class>
+		<class>com.acme.s4ext.jpa.model.EmpSkillRef</class>			
+		<class>com.acme.s4ext.jpa.model.AllEmployee</class>	
+		<class>com.acme.s4ext.jpa.model.CreateProject</class>
+		<class>com.acme.s4ext.jpa.model.Project</class>
+		<class>com.acme.s4ext.jpa.model.ProjectMaster</class>
+		<class>com.acme.s4ext.jpa.model.Emp2Mgr</class>
+
+		<!-- Converters -->
+		<properties>
+			<!-- 
+			EclipseLink shall not generate tables and views. 
+			This will be done on startup using com.acme.jpa.OnStartListener 
+			-->
+			<property name="eclipselink.ddl-generation" value="none" />
+		</properties>
+	</persistence-unit>
+</persistence>
